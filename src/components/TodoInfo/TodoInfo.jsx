@@ -1,8 +1,9 @@
+import cn from 'classnames';
 import { UserInfo } from '../UserInfo/UserInfo';
 
 // Add the required props
 export const TodoInfo = ({ todo }) => (
-  <article className="TodoInfo TodoInfo--completed">
+  <article className={cn('TodoInfo', { 'TodoInfo--completed': todo.user })}>
     <h2 className="TodoInfo__title">{todo.title}</h2>
     {todo.user && <UserInfo user={todo.user} />}
   </article>
